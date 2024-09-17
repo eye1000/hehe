@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE YOU YUKI POOKIE Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ADD8E6; /* Light blue background */
+            overflow: hidden;
+        }
+
+        #text {
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem; /* Slightly smaller font size */
+            color: #8A2BE2;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+    </style>
+</head>
+<body>
+
+<div id="text">I LOVE YOU YUKI POOKIE</div>
+
+<script>
+    const translations = [
+        'TE AMO YUKI POOKIE',       // Spanish
+        'JE T\'AIME YUKI POOKIE',    // French
+        'Я ЛЮБЛЮ ТЕБЯ, ЮКИ ПОКИ',    // Russian
+        'EU TE AMO YUKI POOKIE',     // Portuguese
+        '愛してるよユキポッキー',        // Japanese
+        'TI AMO YUKI POOKIE',        // Italian
+        'আমি তোমাকে ভালোবাসি ইউকি পুকি', // Bangla
+        'AKU CINTA KAMU YUKI POOKIE', // Indonesian
+        'I LOVE YOU YUKI POOKIE'     // English (end with this)
+    ];
+
+    let index = 0;
+    let loopCount = 0;
+    const maxLoops = 2;
+    const textElement = document.getElementById('text');
+
+    function changeText() {
+        textElement.style.opacity = 0;
+
+        setTimeout(() => {
+            textElement.innerText = translations[index];
+            textElement.style.opacity = 1;
+            index = (index + 1) % translations.length;
+
+            if (index === translations.length - 1) {
+                loopCount++;
+                if (loopCount >= maxLoops) {
+                    window.location.href = "https://www.instagram.com/_yukilmao/";
+                }
+            }
+        }, 500);
+    }
+
+    setInterval(changeText, 1500); // Change text every 1.5 seconds
+</script>
+
+</body>
+</html>
